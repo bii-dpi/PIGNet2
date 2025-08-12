@@ -109,3 +109,21 @@ For example, if you have `protein1-ligand1`, `protein1-ligand2`, `protein2-ligan
 ```console
 python src/exe/predict.py ./src/ckpt/pda_0.pt -p protein1.pdb protein1.pdb protein2.pdb -l ligand1.sdf ligand2.sdf ligand3.sdf
 ```
+
+# Explanation about the results
+
+The result file is a tab-separated file with the following columns:
+
+```
+protein_ligand_single_conformation_0    0.000   -3.990  -2.074  -1.021  0.000   -0.894  0.000
+```
+
+Each of the numeric columns corresponds to:
+
+- True label (which is just set to 0.000 in inference)
+- Total predicted binding affinity (= sum of the right-hand values)
+- van der Waals energy
+- hydrogen bond energy
+- metal-ligand coordination energy
+- hydrophobic energy
+- dummy variable (please ignore this column)
