@@ -12,6 +12,7 @@ For the case of using `conda`, create the environment named `pignet2` as followi
 conda create -n pignet2 python=3.9
 conda activate pignet2
 conda install rdkit=2022.03.4 openbabel pymol-open-source dimorphite-dl -c conda-forge
+conda install reduce -c bioconda
 ```
 
 ### Install Dependencies
